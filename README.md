@@ -1,6 +1,5 @@
 # iu_project
-Hausarbeit für das Modul Programmieren mit Python
-Autor: Malte Arnold
+Hausarbeit für das Modul Programmieren mit Python. Autor: Malte Arnold
 ## Aufgaben
 ### Voraussetzungen
 Du erhältst:
