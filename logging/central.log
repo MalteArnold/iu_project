@@ -1,0 +1,152 @@
+2024-03-26 13:43:14,382 - centrallogger - INFO - ###################################
+2024-03-26 13:43:14,382 - centrallogger - INFO - ### Starting Script ###
+2024-03-26 13:43:14,390 - centrallogger - INFO - Creating dataframe: train
+2024-03-26 13:43:14,396 - centrallogger - INFO - Creating dataframe: ideal
+2024-03-26 13:43:14,399 - centrallogger - INFO - Creating sorted dataframe: test
+2024-03-26 13:43:14,399 - centrallogger - INFO - Creating database object
+2024-03-26 13:43:14,400 - centrallogger - INFO - Creating connection to database: iu-project
+2024-03-26 13:43:14,400 - centrallogger - INFO - Connection string: mysql+pymysql://root:password@localhost:3306/iu-project
+2024-03-26 13:43:14,525 - centrallogger - INFO - Creating engine object
+2024-03-26 13:43:14,533 - centrallogger - INFO - Creating connection object
+2024-03-26 13:43:14,535 - centrallogger - INFO - Creating metadata object
+2024-03-26 13:43:14,650 - centrallogger - INFO - Creating database table: train.csv
+2024-03-26 13:43:14,929 - centrallogger - INFO - Creating database table: ideal.csv
+2024-03-26 13:43:14,978 - centrallogger - INFO - Creating database table: test.csv
+2024-03-26 13:43:15,026 - centrallogger - INFO - Creating database table: sorted_test.csv
+2024-03-26 13:43:15,027 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:15,028 - centrallogger - INFO - Visualizing data
+2024-03-26 13:43:15,162 - centrallogger - INFO - Creating plot: train.csv
+2024-03-26 13:43:15,163 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:16,654 - centrallogger - INFO - Creating calculator object
+2024-03-26 13:43:16,655 - centrallogger - INFO - Calculating least squares
+2024-03-26 13:43:16,660 - centrallogger - INFO - ### Train-function: y1 ###
+2024-03-26 13:43:16,660 - centrallogger - INFO - Result for train_data_y = 1
+2024-03-26 13:43:16,661 - centrallogger - INFO - Ideal data y: 36
+2024-03-26 13:43:16,661 - centrallogger - INFO - Minimal deviation value: 33.71178854422825
+2024-03-26 13:43:16,661 - centrallogger - INFO - Minimal deviation index: 35
+2024-03-26 13:43:16,663 - centrallogger - INFO - ### Train-function: y2 ###
+2024-03-26 13:43:16,663 - centrallogger - INFO - Result for train_data_y = 2
+2024-03-26 13:43:16,664 - centrallogger - INFO - Ideal data y: 11
+2024-03-26 13:43:16,664 - centrallogger - INFO - Minimal deviation value: 32.62893138832119
+2024-03-26 13:43:16,664 - centrallogger - INFO - Minimal deviation index: 10
+2024-03-26 13:43:16,666 - centrallogger - INFO - ### Train-function: y3 ###
+2024-03-26 13:43:16,666 - centrallogger - INFO - Result for train_data_y = 3
+2024-03-26 13:43:16,666 - centrallogger - INFO - Ideal data y: 2
+2024-03-26 13:43:16,666 - centrallogger - INFO - Minimal deviation value: 33.11847188090259
+2024-03-26 13:43:16,667 - centrallogger - INFO - Minimal deviation index: 1
+2024-03-26 13:43:16,668 - centrallogger - INFO - ### Train-function: y4 ###
+2024-03-26 13:43:16,669 - centrallogger - INFO - Result for train_data_y = 4
+2024-03-26 13:43:16,669 - centrallogger - INFO - Ideal data y: 33
+2024-03-26 13:43:16,669 - centrallogger - INFO - Minimal deviation value: 31.752431101394777
+2024-03-26 13:43:16,669 - centrallogger - INFO - Minimal deviation index: 32
+2024-03-26 13:43:16,669 - centrallogger - INFO - Calculating best fits
+2024-03-26 13:43:16,669 - centrallogger - INFO - Result: [{'train_data_y': 1, 'ideal_data_y': 36, 'minimal_deviation_value': 33.71178854422825, 'minimal_deviation_index': 35}, {'train_data_y': 2, 'ideal_data_y': 11, 'minimal_deviation_value': 32.62893138832119, 'minimal_deviation_index': 10}, {'train_data_y': 3, 'ideal_data_y': 2, 'minimal_deviation_value': 33.11847188090259, 'minimal_deviation_index': 1}, {'train_data_y': 4, 'ideal_data_y': 33, 'minimal_deviation_value': 31.752431101394777, 'minimal_deviation_index': 32}]
+2024-03-26 13:43:16,716 - centrallogger - INFO - Creating database table: result best fits
+2024-03-26 13:43:16,719 - centrallogger - INFO - Best fitting functions: [36 11  2 33]
+2024-03-26 13:43:16,794 - centrallogger - INFO - Creating database table: best fits
+2024-03-26 13:43:16,794 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:16,795 - centrallogger - INFO - Visualizing data
+2024-03-26 13:43:16,827 - centrallogger - INFO - Creating plot: best fits
+2024-03-26 13:43:16,827 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:17,396 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:17,404 - centrallogger - INFO - Creating plot for source DataFrame
+2024-03-26 13:43:17,424 - centrallogger - INFO - Creating plot for selection
+2024-03-26 13:43:17,434 - centrallogger - INFO - Creating plot: Best fits
+2024-03-26 13:43:17,434 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:18,039 - centrallogger - INFO - Validation calculation
+2024-03-26 13:43:18,039 - centrallogger - INFO - Get column values from best_fits_data and corresponding test_data
+2024-03-26 13:43:18,111 - centrallogger - INFO - result_dict: [{'best_fits_data': 'y36', 'M': 'y36', 'maximal_deviation_value': 119.347134, 'maximal_deviation_index': 0}, {'best_fits_data': 'y11', 'M': 'y11', 'maximal_deviation_value': 13.0705814, 'maximal_deviation_index': 88}, {'best_fits_data': 'y2', 'M': 'y2', 'maximal_deviation_value': 19.75521607, 'maximal_deviation_index': 0}, {'best_fits_data': 'y33', 'M': 'y33', 'maximal_deviation_value': 39.471744, 'maximal_deviation_index': 0}]
+2024-03-26 13:43:18,111 - centrallogger - INFO - Get column values from train_data and corresponding best_fits_data
+2024-03-26 13:43:18,124 - centrallogger - INFO - result_dict: [{'train_data': 'y1', 'best_fits_data': 'y36', 'N': 'y36', 'maximal_deviation_value': 0.4997939999999943, 'maximal_deviation_index': 18}, {'train_data': 'y2', 'best_fits_data': 'y11', 'N': 'y11', 'maximal_deviation_value': 0.49678800000000045, 'maximal_deviation_index': 65}, {'train_data': 'y3', 'best_fits_data': 'y2', 'N': 'y2', 'maximal_deviation_value': 0.49987616, 'maximal_deviation_index': 345}, {'train_data': 'y4', 'best_fits_data': 'y33', 'N': 'y33', 'maximal_deviation_value': 0.4949089999999998, 'maximal_deviation_index': 345}]
+2024-03-26 13:43:18,125 - centrallogger - INFO - Calculation of M < (sqrt(2)) * N
+2024-03-26 13:43:18,125 - centrallogger - INFO - max M deviation: 119.347134
+2024-03-26 13:43:18,125 - centrallogger - INFO - max N deviation: 0.4997939999999943
+2024-03-26 13:43:18,125 - centrallogger - INFO - sqrt(2)*N = 0.7068154531926907
+2024-03-26 13:43:18,125 - centrallogger - INFO - max M deviation: 13.0705814
+2024-03-26 13:43:18,127 - centrallogger - INFO - max N deviation: 0.49678800000000045
+2024-03-26 13:43:18,127 - centrallogger - INFO - sqrt(2)*N = 0.7025643272242058
+2024-03-26 13:43:18,127 - centrallogger - INFO - max M deviation: 19.75521607
+2024-03-26 13:43:18,127 - centrallogger - INFO - max N deviation: 0.49987616
+2024-03-26 13:43:18,127 - centrallogger - INFO - sqrt(2)*N = 0.7069316449789833
+2024-03-26 13:43:18,127 - centrallogger - INFO - max M deviation: 39.471744
+2024-03-26 13:43:18,128 - centrallogger - INFO - max N deviation: 0.4949089999999998
+2024-03-26 13:43:18,128 - centrallogger - INFO - sqrt(2)*N = 0.6999070199405059
+2024-03-26 13:43:18,128 - centrallogger - INFO - validation_result: []
+2024-03-26 13:43:18,128 - centrallogger - INFO - ### Finished script ###
+2024-03-26 13:43:18,128 - centrallogger - INFO - ###################################
+2024-03-26 13:43:49,156 - centrallogger - INFO - ###################################
+2024-03-26 13:43:49,158 - centrallogger - INFO - ### Starting Script ###
+2024-03-26 13:43:49,165 - centrallogger - INFO - Creating dataframe: train
+2024-03-26 13:43:49,172 - centrallogger - INFO - Creating dataframe: ideal
+2024-03-26 13:43:49,175 - centrallogger - INFO - Creating sorted dataframe: test
+2024-03-26 13:43:49,175 - centrallogger - INFO - Creating database object
+2024-03-26 13:43:49,175 - centrallogger - INFO - Creating connection to database: iu-project
+2024-03-26 13:43:49,175 - centrallogger - INFO - Connection string: mysql+pymysql://root:!Schwert1@localhost:3306/iu-project
+2024-03-26 13:43:49,302 - centrallogger - INFO - Creating engine object
+2024-03-26 13:43:49,311 - centrallogger - INFO - Creating connection object
+2024-03-26 13:43:49,311 - centrallogger - INFO - Creating metadata object
+2024-03-26 13:43:49,425 - centrallogger - INFO - Creating database table: train.csv
+2024-03-26 13:43:49,677 - centrallogger - INFO - Creating database table: ideal.csv
+2024-03-26 13:43:49,727 - centrallogger - INFO - Creating database table: test.csv
+2024-03-26 13:43:49,773 - centrallogger - INFO - Creating database table: sorted_test.csv
+2024-03-26 13:43:49,773 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:49,775 - centrallogger - INFO - Visualizing data
+2024-03-26 13:43:49,906 - centrallogger - INFO - Creating plot: train.csv
+2024-03-26 13:43:49,906 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:51,269 - centrallogger - INFO - Creating calculator object
+2024-03-26 13:43:51,270 - centrallogger - INFO - Calculating least squares
+2024-03-26 13:43:51,273 - centrallogger - INFO - ### Train-function: y1 ###
+2024-03-26 13:43:51,274 - centrallogger - INFO - Result for train_data_y = 1
+2024-03-26 13:43:51,274 - centrallogger - INFO - Ideal data y: 36
+2024-03-26 13:43:51,274 - centrallogger - INFO - Minimal deviation value: 33.71178854422825
+2024-03-26 13:43:51,274 - centrallogger - INFO - Minimal deviation index: 35
+2024-03-26 13:43:51,277 - centrallogger - INFO - ### Train-function: y2 ###
+2024-03-26 13:43:51,277 - centrallogger - INFO - Result for train_data_y = 2
+2024-03-26 13:43:51,277 - centrallogger - INFO - Ideal data y: 11
+2024-03-26 13:43:51,277 - centrallogger - INFO - Minimal deviation value: 32.62893138832119
+2024-03-26 13:43:51,277 - centrallogger - INFO - Minimal deviation index: 10
+2024-03-26 13:43:51,279 - centrallogger - INFO - ### Train-function: y3 ###
+2024-03-26 13:43:51,279 - centrallogger - INFO - Result for train_data_y = 3
+2024-03-26 13:43:51,279 - centrallogger - INFO - Ideal data y: 2
+2024-03-26 13:43:51,279 - centrallogger - INFO - Minimal deviation value: 33.11847188090259
+2024-03-26 13:43:51,280 - centrallogger - INFO - Minimal deviation index: 1
+2024-03-26 13:43:51,281 - centrallogger - INFO - ### Train-function: y4 ###
+2024-03-26 13:43:51,281 - centrallogger - INFO - Result for train_data_y = 4
+2024-03-26 13:43:51,281 - centrallogger - INFO - Ideal data y: 33
+2024-03-26 13:43:51,282 - centrallogger - INFO - Minimal deviation value: 31.752431101394777
+2024-03-26 13:43:51,282 - centrallogger - INFO - Minimal deviation index: 32
+2024-03-26 13:43:51,282 - centrallogger - INFO - Calculating best fits
+2024-03-26 13:43:51,282 - centrallogger - INFO - Result: [{'train_data_y': 1, 'ideal_data_y': 36, 'minimal_deviation_value': 33.71178854422825, 'minimal_deviation_index': 35}, {'train_data_y': 2, 'ideal_data_y': 11, 'minimal_deviation_value': 32.62893138832119, 'minimal_deviation_index': 10}, {'train_data_y': 3, 'ideal_data_y': 2, 'minimal_deviation_value': 33.11847188090259, 'minimal_deviation_index': 1}, {'train_data_y': 4, 'ideal_data_y': 33, 'minimal_deviation_value': 31.752431101394777, 'minimal_deviation_index': 32}]
+2024-03-26 13:43:51,332 - centrallogger - INFO - Creating database table: result best fits
+2024-03-26 13:43:51,335 - centrallogger - INFO - Best fitting functions: [36 11  2 33]
+2024-03-26 13:43:51,406 - centrallogger - INFO - Creating database table: best fits
+2024-03-26 13:43:51,406 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:51,407 - centrallogger - INFO - Visualizing data
+2024-03-26 13:43:51,436 - centrallogger - INFO - Creating plot: best fits
+2024-03-26 13:43:51,437 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:52,095 - centrallogger - INFO - Creating visualizer object
+2024-03-26 13:43:52,101 - centrallogger - INFO - Creating plot for source DataFrame
+2024-03-26 13:43:52,122 - centrallogger - INFO - Creating plot for selection
+2024-03-26 13:43:52,133 - centrallogger - INFO - Creating plot: Best fits
+2024-03-26 13:43:52,133 - centrallogger - INFO - Showing plot
+2024-03-26 13:43:52,703 - centrallogger - INFO - Validation calculation
+2024-03-26 13:43:52,704 - centrallogger - INFO - Get column values from best_fits_data and corresponding test_data
+2024-03-26 13:43:52,773 - centrallogger - INFO - result_dict: [{'best_fits_data': 'y36', 'M': 'y36', 'maximal_deviation_value': 119.347134, 'maximal_deviation_index': 0}, {'best_fits_data': 'y11', 'M': 'y11', 'maximal_deviation_value': 13.0705814, 'maximal_deviation_index': 88}, {'best_fits_data': 'y2', 'M': 'y2', 'maximal_deviation_value': 19.75521607, 'maximal_deviation_index': 0}, {'best_fits_data': 'y33', 'M': 'y33', 'maximal_deviation_value': 39.471744, 'maximal_deviation_index': 0}]
+2024-03-26 13:43:52,774 - centrallogger - INFO - Get column values from train_data and corresponding best_fits_data
+2024-03-26 13:43:52,788 - centrallogger - INFO - result_dict: [{'train_data': 'y1', 'best_fits_data': 'y36', 'N': 'y36', 'maximal_deviation_value': 0.4997939999999943, 'maximal_deviation_index': 18}, {'train_data': 'y2', 'best_fits_data': 'y11', 'N': 'y11', 'maximal_deviation_value': 0.49678800000000045, 'maximal_deviation_index': 65}, {'train_data': 'y3', 'best_fits_data': 'y2', 'N': 'y2', 'maximal_deviation_value': 0.49987616, 'maximal_deviation_index': 345}, {'train_data': 'y4', 'best_fits_data': 'y33', 'N': 'y33', 'maximal_deviation_value': 0.4949089999999998, 'maximal_deviation_index': 345}]
+2024-03-26 13:43:52,788 - centrallogger - INFO - Calculation of M < (sqrt(2)) * N
+2024-03-26 13:43:52,789 - centrallogger - INFO - max M deviation: 119.347134
+2024-03-26 13:43:52,789 - centrallogger - INFO - max N deviation: 0.4997939999999943
+2024-03-26 13:43:52,789 - centrallogger - INFO - sqrt(2)*N = 0.7068154531926907
+2024-03-26 13:43:52,789 - centrallogger - INFO - max M deviation: 13.0705814
+2024-03-26 13:43:52,789 - centrallogger - INFO - max N deviation: 0.49678800000000045
+2024-03-26 13:43:52,789 - centrallogger - INFO - sqrt(2)*N = 0.7025643272242058
+2024-03-26 13:43:52,789 - centrallogger - INFO - max M deviation: 19.75521607
+2024-03-26 13:43:52,790 - centrallogger - INFO - max N deviation: 0.49987616
+2024-03-26 13:43:52,790 - centrallogger - INFO - sqrt(2)*N = 0.7069316449789833
+2024-03-26 13:43:52,790 - centrallogger - INFO - max M deviation: 39.471744
+2024-03-26 13:43:52,790 - centrallogger - INFO - max N deviation: 0.4949089999999998
+2024-03-26 13:43:52,790 - centrallogger - INFO - sqrt(2)*N = 0.6999070199405059
+2024-03-26 13:43:52,790 - centrallogger - INFO - validation_result: []
+2024-03-26 13:43:52,790 - centrallogger - INFO - ### Finished script ###
+2024-03-26 13:43:52,791 - centrallogger - INFO - ###################################
