@@ -24,30 +24,30 @@ jeden Testdatensatz die entsprechenden Abweichungen ab.
 4. Alle Daten sollten logisch visualisiert werden
 5. Schreibe Unit-Tests, wo immer möglich
 ### Details
-• Du erhältst vier Trainingsdatensätze in Form von CSV-Dateien. Dein Python-Programm muss in der Lage
+1. Du erhältst vier Trainingsdatensätze in Form von CSV-Dateien. Dein Python-Programm muss in der Lage
 sein, eine SQLite-Datenbank (Datei) idealerweise über sqlalchemy unabhängig zu kompilieren und die
 Trainingsdaten in eine einzelne, fünfspaltige Tabelle zu laden. Die erste Spalte zeigt die x-Werte aller
 Funktionen. Tabelle 1 am Ende dieses Unterabschnitts zeigt Dir, welche Struktur Deine Tabelle
 voraussichtlich haben wird.
-• Die fünfzig idealen Funktionen, die auch über eine CSV-Datei bereitgestellt werden, müssen in eine
+2. Die fünfzig idealen Funktionen, die auch über eine CSV-Datei bereitgestellt werden, müssen in eine
 andere Tabelle geladen werden. Ebenso zeigt die erste Spalte die x-Werte, was bedeutet, dass
 insgesamt 51 Spalten vorhanden sind. Tabelle 2 am Ende dieses Unterabschnitts beschreibt
 schematisch, welche Struktur erwartet wird.
-• Nachdem die Trainingsdaten und die idealen Funktionen in die Datenbank geladen wurden, müssen die
+3. Nachdem die Trainingsdaten und die idealen Funktionen in die Datenbank geladen wurden, müssen die
 Testdaten (B) Zeile für Zeile aus einer anderen CSV-Datei geladen und - wenn sie das Kriterium im
 Unterabschnitt 2 erfüllt - mit einer der vier abgeglichen Funktionen abgespeichert werden.
-• Anschließend müssen die Ergebnisse in einer anderen vierspaltigen Tabelle in der SQLite-Datenbank
+4. Anschließend müssen die Ergebnisse in einer anderen vierspaltigen Tabelle in der SQLite-Datenbank
 gespeichert werden. Gemäß Tabelle 3 am Ende dieses Unterabschnitts enthält diese Tabelle vier
 Spalten mit x- und y-Werten sowie die entsprechend gewählte ideale Funktion und die damit
 verbundene Abweichung.
-• Schließlich werden die Trainingsdaten, die Testdaten, die gewählten Idealfunktionen sowie die
+5. Schließlich werden die Trainingsdaten, die Testdaten, die gewählten Idealfunktionen sowie die
 entsprechenden / zugewiesenen Datensätze unter einer entsprechend gewählten Darstellung der
 Abweichung visualisiert.
 ### Struktur des Programms
-• Das Programm soll soweit wie möglich Objekt-orientiert sein.
-• Es soll mindestens eine Vererbungshierarchie (inheritance) haben.
-• Benutze sowohl Standard als auch user-definiertes Exception Handling.
-• Für die Programmlogik solltest Du Pandas benutzen, aber auch Visualisierung mittels Bokeh, matlibplot
+1. Das Programm soll soweit wie möglich Objekt-orientiert sein.
+2. Es soll mindestens eine Vererbungshierarchie (inheritance) haben.
+3. Benutze sowohl Standard als auch user-definiertes Exception Handling.
+4. Für die Programmlogik solltest Du Pandas benutzen, aber auch Visualisierung mittels Bokeh, matlibplot
 etc.
-• Schreibe Unit-Tests, wo immer es sich anbietet.
-• Dokumentiere Dein Programm vollständig und mache von docstrings Gebrauch.
+5. Schreibe Unit-Tests, wo immer es sich anbietet.
+6. Dokumentiere Dein Programm vollständig und mache von docstrings Gebrauch.
