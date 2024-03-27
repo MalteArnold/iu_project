@@ -15,12 +15,12 @@ beachtet werden:
 Summe aller quadratischen y-Abweichungen (Least-Square).
 2. Dein Programm muss den Test-Datensatz B zur Validierung der Selektion benutzen. Hierbei soll für jedes
 x-y-Paar im Test-Datensatz überprüft werden, ob die Werte zu den vier idealen Funktionen passen.
-a. Benutze ein Kriterium, welches sicherstellt, dass die maximale Abweichung zwischen der vorher
-ermittelten idealen Funktion und den Testwerten nicht die maximale Abweichung zwischen den
-Trainingsdaten (A) und den vier idealen Funktionen aus (C) um mehr als den Faktor Wurzel aus
-zwei (sqrt(2)) übersteigt.
-b. Sollten die Testdaten an die von Dir gefundenen vier Funktionen anpassbar sein, speichere für
-jeden Testdatensatz die entsprechenden Abweichungen ab.
+  a. Benutze ein Kriterium, welches sicherstellt, dass die maximale Abweichung zwischen der vorher
+  ermittelten idealen Funktion und den Testwerten nicht die maximale Abweichung zwischen den
+  Trainingsdaten (A) und den vier idealen Funktionen aus (C) um mehr als den Faktor Wurzel aus
+  zwei (sqrt(2)) übersteigt.
+  b. Sollten die Testdaten an die von Dir gefundenen vier Funktionen anpassbar sein, speichere für
+  jeden Testdatensatz die entsprechenden Abweichungen ab.
 4. Alle Daten sollten logisch visualisiert werden
 5. Schreibe Unit-Tests, wo immer möglich
 ### Details
