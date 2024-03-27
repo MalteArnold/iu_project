@@ -21,8 +21,8 @@ Trainingsdaten (A) und den vier idealen Funktionen aus (C) um mehr als den Fakto
 zwei (sqrt(2)) übersteigt.
 b. Sollten die Testdaten an die von Dir gefundenen vier Funktionen anpassbar sein, speichere für
 jeden Testdatensatz die entsprechenden Abweichungen ab.
-3. Alle Daten sollten logisch visualisiert werden
-4. Schreibe Unit-Tests, wo immer möglich
+4. Alle Daten sollten logisch visualisiert werden
+5. Schreibe Unit-Tests, wo immer möglich
 ### Details
 • Du erhältst vier Trainingsdatensätze in Form von CSV-Dateien. Dein Python-Programm muss in der Lage
 sein, eine SQLite-Datenbank (Datei) idealerweise über sqlalchemy unabhängig zu kompilieren und die
