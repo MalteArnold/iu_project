@@ -40,7 +40,7 @@ class Database:
 
         # Set database name and create connection string
         self.database_name = database_name
-        password = "!Schwert1"
+        password = os.environ['MYSQL_PASSWORD']
         port = "3306"
         host = "localhost"
         self.connection_string = (
