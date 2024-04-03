@@ -40,7 +40,7 @@ class Database:
 
         # Set database name and create connection string
         self.database_name = database_name
-        password = os.environ['MYSQL_PASSWORD']
+        password = os.environ["MYSQL_PASSWORD"]
         port = "3306"
         host = "localhost"
         self.connection_string = (
@@ -116,3 +116,4 @@ class Database:
             data = ideal_data[result_column]
             result_data[result_column] = data.values
         return result_data
+
