@@ -106,7 +106,7 @@ class Calculator:
         result_dict_list = []
 
         # check if the dataframes are empty
-        if best_fits_data.empty | test_data.empty:
+        if best_fits_data.empty or test_data.empty:
             return result_dict_list
 
         logger.logger.info(
@@ -117,75 +117,39 @@ class Calculator:
             if column_best == "x":
                 continue
 
-            result_array = 0.0
-            result_dict = {
-                "best_fits_data": column_best,
-                "M": column_best,
-                "maximal_deviation_value": 0.0,
-                "maximal_deviation_index": 0,
-            }
+            result_array = []
 
             for row in test_data.index:
-                logger.logger.debug("Column best: " + str(column_best))
-                logger.logger.debug("test_data_row_index: " + str(row))
-
-                # .loc[row, column] = get value of location
                 x_value_test_data = test_data.loc[row, "x"]
                 y_value_test_data = test_data.loc[row, "y"]
-                logger.logger.debug("x_value: " + str(x_value_test_data))
-                logger.logger.debug("y_value: " + str(y_value_test_data))
-                logger.logger.debug(
-                    "y_value to find from x = " + str(x_value_test_data)
-                )
 
-                # get index of x_value in the best_fits_Data
-                selection = best_fits_data["x"]
-                position_index = pd.Index(selection).get_loc(x_value_test_data)
+                position_index = best_fits_data["x"].searchsorted(x_value_test_data)
+                if position_index >= len(best_fits_data):
+                    position_index -= 1
 
-                # .loc[row, column] = get value of location
                 y_value_best_fits = best_fits_data.loc[position_index, column_best]
-                if y_value_best_fits is None:
+
+                if pd.isna(y_value_best_fits):
                     logger.info(
                         "no y value found in best_fits for x: " + str(x_value_test_data)
                     )
                     continue
 
-                logger.logger.debug(
-                    "column : "
-                    + str(column_best)
-                    + " --> position_in_column: "
-                    + str(position_index)
-                    + " --> y_value: "
-                    + str(y_value_best_fits)
-                )
+                result = abs(y_value_best_fits - y_value_test_data)
+                result_array.append(result)
 
-                logger.logger.debug(
-                    "x value is "
-                    + str(x_value_test_data)
-                    + ", calculation of deviation ..."
-                )
-                result = np.subtract(y_value_best_fits, y_value_test_data)
-                logger.logger.debug(
-                    "Result: "
-                    + str(y_value_best_fits)
-                    + " - "
-                    + str("(")
-                    + str(y_value_test_data)
-                    + str(")")
-                    + " = "
-                    + str(result)
-                )
-                result_array = np.append(result_array, result)
-                logger.logger.debug("#########################################")
+            maximal_deviation = np.max(result_array)
+            maximal_deviation_index = np.argmax(result_array)
 
-            index_to_delete = 0
-            new_result_array = np.delete(result_array, index_to_delete)
-            maximal_deviation = np.max(new_result_array)
-            result_dict["maximal_deviation_value"] = maximal_deviation
-            maximal_deviation_index = np.argmax(new_result_array)
-            result_dict["maximal_deviation_index"] = maximal_deviation_index
+            result_dict = {
+                "best_fits_data": column_best,
+                "M": column_best,
+                "maximal_deviation_value": maximal_deviation,
+                "maximal_deviation_index": maximal_deviation_index,
+            }
 
             result_dict_list.append(result_dict)
+
         logger.logger.info("result_dict: " + str(result_dict_list))
         return result_dict_list
 
@@ -202,7 +166,7 @@ class Calculator:
         result_dict_list = []
 
         # check whether the dataframe are empty
-        if train_data.empty | best_fits_data.empty:
+        if train_data.empty or best_fits_data.empty:
             return result_dict_list
 
         columns_train_data = len(train_data.columns)
@@ -212,38 +176,32 @@ class Calculator:
             "Get column values from train_data and corresponding best_fits_data"
         )
 
-        for column_train in range(1, columns_train_data, 1):
-            result_array = 0.0
-            result_dict = {
-                "train_data": 0,
-                "best_fits_data": 0,
-                "N": 0,
-                "maximal_deviation_value": 0.0,
-                "maximal_deviation_index": 0,
-            }
+        for column_train in range(1, columns_train_data):
+            result_array = []
 
-            # create array from y column values
             current_train_column = train_data.columns[column_train]
             train_y_array = np.array(train_data[current_train_column])
-            result_dict["train_data"] = current_train_column
+
             current_best_fits_column = best_fits_data.columns[column_train]
             best_fits_y_array = np.array(best_fits_data[current_best_fits_column])
-            result_dict["best_fits_data"] = current_best_fits_column
-            result_dict["N"] = current_best_fits_column
 
-            # 400 rows to subtract
-            for row in range(0, rows_train_data, 1):
-                result = np.subtract(train_y_array[row], best_fits_y_array[row])
-                result_array = np.append(result_array, result)
+            for row in range(rows_train_data):
+                result = abs(train_y_array[row] - best_fits_y_array[row])
+                result_array.append(result)
 
-            index_to_delete = 0
-            new_result_array = np.delete(result_array, index_to_delete)
-            maximal_deviation = np.max(new_result_array)
-            result_dict["maximal_deviation_value"] = maximal_deviation
-            maximal_deviation_index = np.argmax(new_result_array)
-            result_dict["maximal_deviation_index"] = maximal_deviation_index
+            maximal_deviation = np.max(result_array)
+            maximal_deviation_index = np.argmax(result_array)
+
+            result_dict = {
+                "train_data": current_train_column,
+                "best_fits_data": current_best_fits_column,
+                "N": current_best_fits_column,
+                "maximal_deviation_value": maximal_deviation,
+                "maximal_deviation_index": maximal_deviation_index,
+            }
 
             result_dict_list.append(result_dict)
+
         logger.logger.info("result_dict: " + str(result_dict_list))
         return result_dict_list
 
@@ -270,20 +228,22 @@ class Calculator:
 
         logger.logger.info("Calculation of M < (sqrt(2)) * N")
 
-        for item in range(0, result_m_list.__len__(), 1):
+        for item in range(len(result_m_list)):
             m_max_deviation = result_m_list[item].get("maximal_deviation_value")
-            logger.logger.info("max M deviation: " + str(m_max_deviation))
             n_max_deviation = result_n_list[item].get("maximal_deviation_value")
-            logger.logger.info("max N deviation: " + str(n_max_deviation))
             n_condition = n_max_deviation * math.sqrt(2)
-            logger.logger.info("sqrt(2)*N = " + str(n_condition))
 
             if m_max_deviation < n_condition:
                 logger.logger.info(
-                    "M: "
-                    + str(m_max_deviation)
-                    + " is smaller than sqrt(2)*N: "
-                    + str(n_condition)
+                    f"M: {m_max_deviation} is smaller than sqrt(2)*N: {n_condition}"
                 )
+
+        # Create a dictionary with the results and append it to result_dict_list
+        result_dict = {
+            "M_max_deviation": m_max_deviation,
+            "N_max_deviation": n_max_deviation,
+            "N_condition": n_condition,
+        }
+        result_dict_list.append(result_dict)
 
         return result_dict_list
